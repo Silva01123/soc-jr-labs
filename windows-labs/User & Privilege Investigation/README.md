@@ -39,10 +39,6 @@ Associações de Grupo Global         *None
 Comando concluído com êxito.
 
 
-C:\Users\Sant'Ana>whoami groups
-ERRO: Argumento/opção inválido - 'groups'.
-Digite "WHOAMI /?" para obter detalhes sobre o uso.
-
 C:\Users\Sant'Ana>whoami /groups
 
 INFORMAÇÕES DE GRUPO
