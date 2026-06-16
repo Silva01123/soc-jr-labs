@@ -1,4 +1,4 @@
-# soc-jr-labs
+# Soc-jr-labs
 
 Hands-on SOC Analyst labs focused on:
 
