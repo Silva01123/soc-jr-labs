@@ -1,4 +1,4 @@
-# Process Investigation Lab
+# Lab 1-Process Investigation Lab
 
 ## Objective
 Investigate running Windows processes and identify suspicious behavior.
