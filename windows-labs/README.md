@@ -33,13 +33,13 @@
 - svchost.exe
 - Serviços do Windows
 
-🧪 Lab 6 — Windows Registry Investigation
+✅ Lab 6 — Windows Registry Investigation
 - regedit
 - HKLM
 - HKCU
 - Registro do Windows
 
-🧪 Lab 7 — Persistence Investigation
+✅ Lab 7 — Persistence Investigation
 - Run Keys
 - RunOnce
 - Startup Folder
