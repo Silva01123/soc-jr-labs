@@ -46,20 +46,20 @@
 - AppData
 - Temp
 
-🧪 Lab 8 — Windows Security Investigation
+✅ Lab 8 — Windows Security Investigation
 - Windows Defender
 - Firewall
 - Windows Update
 - Proteção do sistema
 
-🧪 Lab 9 — Event Log Investigation
+✅ Lab 9 — Event Log Investigation
 - Event Viewer
 - Security
 - System
 - Application
 - IDs 4624, 4625, 4672
 
-🏆 Lab 10 — SOC Investigation Scenario
+✅🏆 Lab 10 — SOC Investigation Scenario
 - Processo
 - Usuário
 - Serviço
