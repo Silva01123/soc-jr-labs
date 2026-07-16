@@ -1,4 +1,4 @@
- 02 – User & Privilege Investigation
+# 🧪 Linux Lab 02 – User & Privilege Investigation
 
 ## Objective
 
