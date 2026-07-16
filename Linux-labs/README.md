@@ -5,10 +5,9 @@ This repository contains hands-on Linux investigation labs focused on the daily 
 ## Completed Labs
 
 * ✅ Lab 1 — Process Investigation
-
+* ✅ Lab 2 — User & Privilege Investigation
 ## Upcoming Labs
 
-* ⏳ Lab 2 — User & Privilege Investigation
 * ⏳ Lab 3 — Network Investigation
 * ⏳ Lab 4 — Log Analysis
 * ⏳ Lab 5 — Persistence Investigation
