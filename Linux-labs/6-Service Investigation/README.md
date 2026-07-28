@@ -1,18 +1,18 @@
-# 🧪 Linux Lab 6 – Service Investigation
+🧪 Linux Lab 6 – Service Investigation
 
-## Objective
+Objective
 
 Investigate a Linux service to determine whether it is legitimate by analyzing its status, startup configuration, running process, and executable path.
 
 ---
 
-## Scenario
+Scenario
 
 A monitoring system generated an alert related to the **networkd-dispatcher** service. The objective was to verify whether the service had been modified or if it was a legitimate system component.
 
 ---
 
-## Investigation Steps
+ Investigation Steps
 
 ### 1. Check the service status
 
