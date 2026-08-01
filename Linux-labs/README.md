@@ -9,13 +9,13 @@ This repository contains hands-on Linux investigation labs focused on the daily 
 * ✅ Lab 3 — Network Investigation
 * ✅ Lab 4 — Log Analysis
 * ✅ Lab 5 — Persistence Investigation
+* ✅ Lab 6 — Service Investigation
+* ✅ Lab 7 — File System & IOC Hunt
 ## Upcoming Labs
 
-* ⏳ Lab 6 — Sudo & Privilege Escalation
-* ⏳ Lab 7 — Service Investigation
-* ⏳ Lab 8 — File System & IOC Hunting
-* ⏳ Lab 9 — Incident Correlation
-* ⏳ Lab 10 — Full SOC Investigation
+* ⏳ Lab 8 — Incident Correlation
+* ⏳ Lab 9 — Full SOC Investigation
+
 
 ## Objective
 
