@@ -12,9 +12,10 @@ This repository contains hands-on Linux investigation labs focused on the daily 
 * ✅ Lab 6 — Service Investigation
 * ✅ Lab 7 — File System & IOC Hunt
 * ✅ Lab 8 — Incident Correlation
+* ✅ Lab 9 — Full SOC Investigation
 ## Upcoming Labs
 
-* ⏳ Lab 9 — Full SOC Investigation
+⏳ Lab 10 — Full SOC Investigation (Final Project)
 
 
 ## Objective
