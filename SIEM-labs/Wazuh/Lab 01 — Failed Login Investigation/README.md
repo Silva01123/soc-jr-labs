@@ -95,4 +95,66 @@ The simulated event sequence contains:
 
 - Repeated failed authentication attempts.
 - A subsequent successful authentication for the same account and source.
--
+- Process creation following the successful login.
+- A common simulated endpoint, username, and source IP across the authentication events.
+
+### Is the activity suspicious?
+
+Yes. The sequence warrants further investigation because repeated authentication failures followed by a successful login may indicate a potential brute-force attempt or another unauthorized authentication scenario.
+
+The subsequent creation of PowerShell through Command Prompt also requires investigation.
+
+However, neither the authentication sequence nor the process creation event independently proves malicious activity. Legitimate administrative tasks and other benign explanations must also be considered.
+
+## 8. Classification
+
+- **Result:** Suspicious activity — further investigation required
+- **Severity:** Undetermined
+- **Confidence:** Preliminary
+- **Incident confirmed:** No
+- **Escalation:** Recommend escalation to SOC Level 2 if the activity remains unexplained or meets the organization's escalation criteria.
+
+## 9. Recommended Actions
+
+1. Identify the device associated with source IP `192.168.1.50`.
+2. Confirm whether the administrator login was authorized.
+3. Review the complete Windows authentication events and available logon details.
+4. Correlate authentication events using timestamps and available session identifiers, such as Logon ID.
+5. Investigate the full PowerShell command line and related process activity.
+6. Review available PowerShell logs, additional process events, and relevant network activity.
+7. Search for other suspicious authentication attempts or privilege-related events.
+8. Preserve relevant evidence and document the investigation timeline.
+9. Escalate to SOC Level 2 according to the organization's incident response procedures when justified by the evidence.
+
+Any containment action should follow the organization's response procedures and the assessed risk.
+
+## 10. Conclusion
+
+This simulated investigation demonstrates how a SOC Analyst can correlate repeated failed authentication attempts, a subsequent successful login, and process creation to identify potentially suspicious activity.
+
+The appropriate response is to validate the source, investigate the authentication session, examine subsequent process activity, preserve relevant evidence, and escalate when warranted.
+
+The available simulated evidence supports a preliminary suspicious classification but does not confirm an attack or system compromise.
+
+No real Wazuh alerts were investigated during this exercise.
+
+## 11. Skills Practiced
+
+- Windows authentication event analysis
+- Event ID interpretation: 4625, 4624, and 4688
+- Authentication timeline reconstruction
+- Event correlation
+- Process investigation
+- Evidence collection and documentation
+- Preliminary incident classification
+- SOC escalation decisions
+- Wazuh investigation workflow concepts
+
+## 12. Lessons Learned
+
+- Repeated authentication failures should be assessed in context.
+- A successful login following multiple failures increases the need for investigation but does not prove compromise.
+- Process creation events provide useful context about activity after authentication.
+- Missing evidence must be identified rather than invented.
+- Incident classification and escalation decisions must be supported by evidence.
+- Simulated exercises demonstrate analytical reasoning but do not replace hands-on experience with a live SIEM.
