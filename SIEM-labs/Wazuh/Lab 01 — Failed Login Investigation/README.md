@@ -2,93 +2,97 @@
 
 ## 1. Objective
 
-Investigate failed authentication attempts and understand how a SOC Analyst uses Wazuh to identify suspicious login activity.
+Investigate failed authentication attempts and learn how a SOC Analyst uses Wazuh concepts and Windows Security events to identify and assess suspicious login activity.
 
 ## 2. Scenario
 
-A monitored Windows endpoint generates multiple failed login events. The analyst must investigate the events, identify relevant evidence, and determine whether the activity requires further investigation.
+A monitored Windows endpoint records multiple failed authentication attempts, followed by a successful login and subsequent process creation. The analyst must correlate the events, identify relevant evidence, assess potential risks, and recommend appropriate actions.
 
-**Evidence status:** This lab initially uses simulated data for educational purposes. No real Wazuh alert is claimed unless it is collected from an actual Wazuh environment.
+**Evidence Status:** Simulated training scenario. No real Wazuh alerts were collected, and no live Wazuh investigation is claimed.
 
 ## 3. Tools and Technologies
 
-- Wazuh SIEM
+- Wazuh SIEM concepts
 - Windows Security Event Logs
 - Windows Event ID 4625 — Failed logon
 - Windows Event ID 4624 — Successful logon
+- Windows Event ID 4688 — Process creation
 - JSON event data and alert fields
+- Authentication and process event correlation
 
 ## 4. Investigation Objectives
 
-- Identify the account involved.
-- Determine the affected endpoint.
-- Establish when the failed logins occurred.
-- Identify the logon type and failure reason when available.
-- Check whether a successful login followed the failures.
-- Assess whether the activity is suspicious.
+- Identify the account involved in the authentication events.
+- Determine the affected endpoint and source IP.
+- Establish the timeline of failed and successful logins.
+- Identify suspicious authentication patterns.
+- Investigate process creation following successful authentication.
+- Determine which additional evidence is required.
+- Classify the activity based on available evidence.
 - Document findings and recommend appropriate actions.
 
 ## 5. Wazuh Investigation Workflow
 
-1. Locate the relevant authentication alert in Wazuh.
-2. Review the alert timestamp, rule description, and severity.
-3. Inspect the original event fields.
+1. Locate relevant authentication alerts in Wazuh.
+2. Review alert timestamps, rule descriptions, and severity levels.
+3. Inspect the underlying Windows Security events.
 4. Identify the username, endpoint, source information, and logon type when available.
-5. Correlate related failed and successful authentication events.
-6. Determine whether additional evidence is required.
-7. Classify the activity and document the investigation.
+5. Correlate failed authentication attempts with subsequent successful logins.
+6. Investigate related process creation and available command-line details.
+7. Assess the activity using supporting evidence.
+8. Classify the activity and determine whether escalation is necessary.
+9. Document findings, limitations, and recommended actions.
+
+**Note:** This lab demonstrates the investigation methodology using simulated events. Actual Wazuh alerts, rule IDs, and agent data must be collected from a real Wazuh environment before they can be documented as real evidence.
 
 ## 6. Evidence
 
-Evidence collected:
+**Evidence Source:** Simulated training data.
 
-- Alert ID:
-- Timestamp:
-- Wazuh rule ID and description:
-- Rule level:
-- Agent name:
-- Windows Event ID:
-- Username:
-- Source IP, if available:
-- Logon type, if available:
-- Related successful login:
-- Evidence source: Simulated / Real Wazuh environment
+### Authentication Events
 
-Do not fill in fields with invented values. Record unavailable fields as "Not available".
+- Affected endpoint: `WIN-SRV-01`
+- Username: `administrator`
+- Source IP: `192.168.1.50`
+- Failed authentication events: 5
+- First failed login: `02:14:32`
+- Last failed login: `02:14:44`
+- Windows Event ID: `4625`
+- Successful login: `02:15:02`
+- Windows Event ID: `4624`
+
+### Process Creation Event
+
+- Timestamp: `02:15:15`
+- Username: `administrator`
+- Process created: `powershell.exe`
+- Parent process: `cmd.exe`
+- Windows Event ID: `4688`
+- Full command line: Not available
+
+### Wazuh Alert Information
+
+- Alert ID: Not available — simulated scenario
+- Wazuh rule ID and description: Not available
+- Wazuh rule level: Not available
+- Wazuh agent ID: Not available
+- Logon type: Not available
+- Logon ID: Not available
+
+**Evidence limitation:** These values describe a simulated scenario and are not extracted from a live Wazuh dashboard or Windows endpoint. No missing fields have been inferred.
 
 ## 7. Findings
 
 ### What happened?
 
-[Describe the authentication activity observed.]
+Five failed authentication attempts were recorded for the `administrator` account within approximately 12 seconds. A successful login occurred 18 seconds after the last failed attempt.
 
-### What evidence supports the conclusion?
+Shortly afterward, a process creation event recorded `powershell.exe` with `cmd.exe` as its parent process.
 
-[List the relevant event fields and correlated events.]
+### What evidence supports the assessment?
 
-### Is the activity suspicious?
+The simulated event sequence contains:
 
-[Explain the reasoning and any limitations.]
-
-## 8. Classification
-
-- Result: Pending investigation
-- Severity: To be determined from the available evidence
-- Confidence: To be determined
-
-## 9. Recommended Actions
-
-[Document proportionate next steps based on the evidence, such as reviewing related events, validating the activity with the system owner, or escalating a suspected brute-force attempt.]
-
-## 10. Conclusion
-
-[Summarize what was identified, what remains uncertain, and the next recommended action.]
-
-## 11. Skills Practiced
-
-- Authentication event analysis
-- Windows Event ID interpretation
-- Wazuh alert investigation
-- Event correlation
-- Evidence-based incident classification
-- SOC investigation documentation
+- Repeated failed authentication attempts.
+- A subsequent successful authentication for the same account and source.
+-
